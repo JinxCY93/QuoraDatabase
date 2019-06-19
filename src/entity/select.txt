@@ -1,0 +1,10 @@
+For a question, get
+
+    number of upvotes
+    - select count(vote_value) from question_votes where vote_value =1 group by id;
+    number of downvotes
+    - select count(vote_value) from question_votes where vote_value =0 group by id;
+    number of users who voted in total
+    - select count(a.user_id)+count(b.user_id) 
+    from question_votes a join answer_votes b
+    on a.user_id = b.user_id
